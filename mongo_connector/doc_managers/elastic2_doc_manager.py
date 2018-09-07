@@ -493,7 +493,7 @@ class DocManager(DocManagerBase):
     def commit(self):
         """Send buffered requests and refresh all indexes."""
         self.send_buffered_operations()
-        retry_until_ok(self.elastic.indices.refresh, index="")
+        retry_until_ok(self.elastic.indices.refresh, index="soldout,so,mongodb_meta")
 
     @wrap_exceptions
     def get_last_doc(self):
