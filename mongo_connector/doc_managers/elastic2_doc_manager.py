@@ -176,7 +176,7 @@ class DocManager(DocManagerBase):
             client_options['http_auth'] = create_aws_auth(kwargs['aws'])
             client_options['use_ssl'] = True
             client_options['verify_certs'] = True
-            client_options['timeout'] = 10
+            client_options['timeout'] = 30
             client_options['connection_class'] = \
                 es_connection.RequestsHttpConnection
         if type(url) is not list:
